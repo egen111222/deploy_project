@@ -1,0 +1,19 @@
+<section>
+	<h2>Будьмо на зв'язку</h2>
+	<form method="post" action="{{url_for('connection_page.recieve_message')}}">
+		<div class="fields">
+			<div class="field half">
+				<input type="text" name="name" id="name" placeholder="Ім'я" />
+			</div>
+			<div class="field half">
+				<input type="email" name="email" id="email" placeholder="Email" />
+			</div>
+		<div class="field">
+			<textarea name="message" id="message" placeholder="Повідомлення"></textarea>
+		</div>
+		</div>
+	<ul class="actions">
+		<li><input type="submit" value="Надіслати" class="primary" /></li>
+	</ul>
+	</form>
+</section>

@@ -1,0 +1,25 @@
+{%extends 'store/single_item_structure.html' %}
+{% block content %}
+{% if session.get('cart')%}
+
+<h2>У Вашій корзині - {{cart.items_count() }} Товари</h2>
+{% if cart.items %}
+<a href="{{url_for('store_app.clean_cart')}}"><button class="button_margins">Очистити корзину</button></a>
+{% endif %}
+
+<hr>
+{% for item in cart.items %}
+	<h2>{{item.name}}</h2>
+	<p>{{item.description}}</p>
+	<h3>{{item.price}}</h3>
+	<hr>
+{%endfor%}
+<h4>Загальна ціна товарів в корзині - {{cart.get_price()}}</h4>
+
+<a href="{{url_for('store_app.create_order')}}"><button class="button_margins">Оформити замовлення</button></a>
+
+{%else%}
+<h3>Корзина порожня сенсу немає</h3>
+{%endif%}
+
+{% endblock %}

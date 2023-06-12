@@ -1,0 +1,38 @@
+{% extends 'store/main_page_structure.html' %}
+
+{% block title %}Головна сторінка магазин{% endblock %}
+
+{% block content %}
+
+
+							<!-- Portfolio -->
+									<section>
+										<header class="major">
+											<h2>Available items</h2>
+										</header>
+										<div class="row">
+
+
+											{%for item in items%}
+											<div class="col-4 col-6-medium col-12-small">
+												<section class="box">
+													<a href="{{item.id}}" class="image featured"><img src="/{{item.img}}" alt="" /></a>
+													<header>
+														<h3>{{item.name}}</h3>
+													</header>
+													<p>{{item.description}}</p>
+													<h4>ЦІНА:{{item.price}}</h4>
+													<footer>
+														<ul class="actions">
+															<li><a href="{{item.id}}" class="button alt">Дивитись більше</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+											{% endfor %}
+
+										</div>
+									</section>
+
+
+{% endblock %}

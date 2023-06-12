@@ -1,0 +1,8 @@
+<section>
+<h2>Follow</h2>
+	<ul class="icons">
+		{% for social in socials %}
+			<li><a href="{{social.link}}" class="icon brands style2 {{social.img}}"><span class="label">{{social.name}}</span></a></li>
+		{% endfor %}
+	</ul>
+</section>

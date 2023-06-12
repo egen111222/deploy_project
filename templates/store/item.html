@@ -1,0 +1,13 @@
+{%extends 'store/single_item_structure.html'%}
+
+{% block content %}
+<h2>{{item}}</h2>
+<p>{{item.description}}</p>
+<h4>ЦІНА - {{item.price}}</h4>
+<h6>Виробник - {{item.creator}}</h6>
+
+
+<a href="{{url_for('store_app.add_to_cart',item_number=item.id)}}" class="button_margins"><button>Додати до кошика</button></a>
+
+{%endblock%}
+

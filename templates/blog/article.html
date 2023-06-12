@@ -1,0 +1,15 @@
+{%extends 'layout.html' %}
+
+
+{%block title%}{{article.title}}{% endblock %}
+
+{% block content %}
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>{{article.title}}</h1>
+							<span class="image main"><img src="{{url_for('static',filename=article.img)}}" alt="" /></span>
+							<p>{{article.text}}</p>
+						</div>
+					</div>
+{% endblock %}
